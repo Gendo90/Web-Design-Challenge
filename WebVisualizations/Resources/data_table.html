@@ -53,9 +53,12 @@
             crossorigin="anonymous"></script>
 
         <script>
+            let th = document.getElementById("table_holder");
+            th.style.overflowY = "auto";
+            th.style.maxHeight = "600px";
             fetch("./html_formatted_table.txt")
             .then(r=> r.text())
-            .then(text => document.getElementById("table_holder").innerHTML = text)
+            .then(text => th.innerHTML = text)
         </script>
     </body>
 </html>
