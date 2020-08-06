@@ -36,8 +36,7 @@
         </nav>
 
         <div class=container-sm>
-            <div class="table-responsive">
-                <div id="table_placeholder"></div>
+            <div id="table_holder" class="table-responsive">
             </div>
         </div>
 
@@ -55,17 +54,8 @@
 
         <script>
             fetch("./html_formatted_table.txt")
-            .then(r=>console.log(r))
-            // document.addEventListener("DOMContentLoaded", function() {
-            //     let file = new File("./html_formatted_table.txt")
-            //     let fr = new FileReader()
-
-            //     fr.readAsText(file)
-
-            //     document.getElementById("table_placeholder").addEventListener(fr.onload, function() {
-            //         this.innerHTML = fr.result;
-            //     })
-            // })
+            .then(r=> r.text())
+            .then(text => document.getElementById("table_holder").innerHTML = text)
         </script>
     </body>
 </html>
