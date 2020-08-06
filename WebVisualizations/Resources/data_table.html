@@ -36,6 +36,10 @@
         </nav>
 
         <div class=container-sm>
+            <h3>Data Table</h3>
+            <p>This data table includes all information required to create the plots 
+                in this web application.
+            </p>
             <div id="table_holder" class="table-responsive">
             </div>
         </div>
@@ -55,7 +59,7 @@
         <script>
             let th = document.getElementById("table_holder");
             th.style.overflowY = "auto";
-            th.style.maxHeight = "600px";
+            th.style.maxHeight = "80vh";
             fetch("./html_formatted_table.txt")
             .then(r=> r.text())
             .then(text => th.innerHTML = text)
